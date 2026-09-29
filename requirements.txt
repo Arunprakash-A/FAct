@@ -1,0 +1,24 @@
+# fact/ itself needs only torch and numpy (scipy for GELU-fit initialisation).
+torch>=2.0            # 2.10.0 in the published runs
+torchvision>=0.15     # datasets for training and tools/check_checkpoints.py
+numpy>=1.24,<2
+scipy>=1.10
+pillow>=9.0           # image decode; already a torchvision dependency
+pytest>=7.0           # tests only
+
+# The fused CUDA kernels (code/*/cuda_*/) are JIT-compiled through
+# torch.utils.cpp_extension.load, which shells out to ninja and raises
+# "Ninja is required to load C++ extensions" without it. It is not pulled in by
+# torch, so a fresh environment cannot build the kernels until this is
+# installed -- and use_cuda_kernel=True is the default for fact_fixed.
+ninja>=1.11           # code/*/cuda_*/, via torch.utils.cpp_extension.load
+
+# Datasets. CIFAR-10/100 are decoded from the HuggingFace parquet release by
+# tools/build_dataset_cache.py; Fashion-MNIST and Food-101 come through
+# torchvision and need nothing extra.
+pyarrow>=12.0         # tools/build_dataset_cache.py
+huggingface-hub>=0.20 # tools/build_dataset_cache.py, code/source_vit/download_imagenet1k.py
+
+# ImageNet-1K only -- skip these if you are not running the source-scale study.
+datasets>=2.14        # cv_data.py's Arrow-backed loader over the parquet shards
+pandas>=1.5           # cv_data.py's Tiny-ImageNet path (not used by the paper)

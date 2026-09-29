@@ -1,0 +1,117 @@
+{
+  "description": "3-segment (up-down-up) piecewise-linear approximation of the learned fact_k2_global activation (imagenet1k_100ep, seed1, final checkpoint, test_acc=0.6512), restricted to the FFN pre-activation p99 operating range.",
+  "coeffs": {
+    "a0": 0.21817652881145477,
+    "a": [
+      0.11933743208646774,
+      -0.42374375462532043
+    ],
+    "b": [
+      0.8315256237983704,
+      -0.5918471813201904
+    ],
+    "k": [
+      1.0,
+      2.0
+    ],
+    "w": 1.0
+  },
+  "seed1_test_acc": 0.6512,
+  "range_pm": 1.2112500000000015,
+  "range_source": "preact.json p99_abs (99th pctile of |FFN pre-activation|, 464.8M values, 512 imagenet1k val images)",
+  "extrema_based": {
+    "t": [
+      -1.2112500000000015,
+      -0.874190454707127,
+      0.18580343428610133,
+      1.2112500000000015
+    ],
+    "phi": [
+      0.19048779940803617,
+      0.31433999826062753,
+      -0.12065579072219998,
+      0.9674956611260993
+    ],
+    "segments": [
+      {
+        "t_range": [
+          -1.2112500000000015,
+          -0.874190454707127
+        ],
+        "slope": 0.36744901778400874,
+        "intercept": 0.6355604221989173,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          -0.874190454707127,
+          0.18580343428610133
+        ],
+        "slope": -0.41037575169040097,
+        "intercept": -0.04440656671038312,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          0.18580343428610133,
+          1.2112500000000015
+        ],
+        "slope": 1.0611488577083925,
+        "intercept": -0.3178208927731928,
+        "direction": "up"
+      }
+    ],
+    "weighted_rmse_in_range": 0.10056440975940045,
+    "max_abs_error_in_range": 0.23933879978480516
+  },
+  "optimized": {
+    "t": [
+      -1.2112500000000015,
+      -1.0567904484324053,
+      0.33075634635765444,
+      1.2112500000000015
+    ],
+    "phi": [
+      0.19048779940803617,
+      0.27842990670242457,
+      -0.09684871631617309,
+      0.9674956611260993
+    ],
+    "segments": [
+      {
+        "t_range": [
+          -1.2112500000000015,
+          -1.0567904484324053
+        ],
+        "slope": 0.5693536359640554,
+        "intercept": 0.8801173909694991,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          -1.0567904484324053,
+          0.33075634635765444
+        ],
+        "slope": -0.2704619580598567,
+        "intercept": -0.007391707239557788,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          0.33075634635765444,
+          1.2112500000000015
+        ],
+        "slope": 1.2088041441745638,
+        "intercept": -0.4966683585053432,
+        "direction": "up"
+      }
+    ],
+    "weighted_rmse_in_range": 0.07433582413199286,
+    "max_abs_error_in_range": 0.15968065779822388,
+    "knot_shift_from_extrema": [
+      -0.18259999372527835,
+      0.1449529120715531
+    ]
+  },
+  "recommendation": "optimized -- the true local max/min are a reasonable starting guess but not the error-minimizing knots; moving them cuts weighted RMSE from 0.1006 to 0.0743 (26% lower) and max abs error from 0.2393 to 0.1597. Both keep the up-down-up sign pattern (see `segments[].direction`)."
+}

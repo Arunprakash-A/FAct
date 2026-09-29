@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# training checkpoints; the 25 under checkpoints/ are tracked deliberately
+*.pt
+*.pth
+!checkpoints/*.pt
+
+# datasets
+data/
+datasets/
+
+.DS_Store
+*.swp

@@ -1,0 +1,97 @@
+{
+  "name": "fact_fixed",
+  "description": "The fully-learned FAct K=2 global activation from the imagenet1k_100ep study, frozen and reused here as a FIXED activation function.",
+  "source_checkpoint": "final-epoch checkpoint of the ImageNet-1K depth-6 ViT fact_k2_global run, seed 1 -- shipped in this repository as checkpoints/vit_d6_imagenet1k_fact_k2_seed1_final.pt",
+  "source_run": {
+    "dataset": "imagenet1k",
+    "variant": "fact_k2_global",
+    "seed": 1,
+    "epochs": 100,
+    "imagenet1k_test_top1": 0.6512
+  },
+  "K": 2,
+  "w": 1.0,
+  "a0": 0.21817652881145477,
+  "a": [
+    0.11933743208646774,
+    -0.42374375462532043
+  ],
+  "b": [
+    0.8315256237983704,
+    -0.5918471813201904
+  ],
+  "gelu_fit_init": {
+    "a0": 0.7060692947200876,
+    "a": [
+      -0.7049028873443604,
+      0.02611173316836357
+    ],
+    "b": [
+      0.9999998211860657,
+      -0.49999961256980896
+    ],
+    "note": "the true GELU Fourier fit these coefficients STARTED from"
+  },
+  "all_seeds_converged": {
+    "seed1": {
+      "a0": 0.21817652881145477,
+      "a": [
+        0.11933743208646774,
+        -0.42374375462532043
+      ],
+      "b": [
+        0.8315256237983704,
+        -0.5918471813201904
+      ],
+      "imagenet1k_test_top1": 0.6512
+    },
+    "seed2": {
+      "a0": 0.21808892488479614,
+      "a": [
+        0.11522515118122101,
+        -0.4200480878353119
+      ],
+      "b": [
+        0.8493998050689697,
+        -0.6040074229240417
+      ],
+      "imagenet1k_test_top1": 0.64334
+    },
+    "seed3": {
+      "a0": 0.21655426919460297,
+      "a": [
+        0.1129080206155777,
+        -0.4179363548755646
+      ],
+      "b": [
+        0.8374680876731873,
+        -0.5909502506256104
+      ],
+      "imagenet1k_test_top1": 0.6396
+    },
+    "seed4": {
+      "a0": 0.2113082855939865,
+      "a": [
+        0.12152086943387985,
+        -0.4209880828857422
+      ],
+      "b": [
+        0.8643678426742554,
+        -0.6134914755821228
+      ],
+      "imagenet1k_test_top1": 0.64236
+    },
+    "seed5": {
+      "a0": 0.21362057328224182,
+      "a": [
+        0.12131978571414948,
+        -0.4199954867362976
+      ],
+      "b": [
+        0.8457551598548889,
+        -0.5946770906448364
+      ],
+      "imagenet1k_test_top1": 0.64266
+    }
+  }
+}

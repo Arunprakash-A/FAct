@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the paper."
+title: "FAct: a globally shared, transferable learnable activation"
+abstract: >-
+  FAct is one nonlinearity for a whole network: at K = 2, five scalars shared by
+  every hidden layer, learned jointly with the weights and then frozen and
+  installed in a different network as an ordinary fixed activation. This
+  repository holds the activation, the ImageNet-1K source checkpoints, and the
+  training code behind the paper's results.
+authors:
+  - family-names: "A"
+    given-names: "Arun Prakash"
+  - family-names: "Khapra"
+    given-names: "Mitesh M."
+version: "1.0.0"
+year: 2026
+license: MIT
+repository-code: "https://github.com/Arunprakash-A/FAct"
+keywords:
+  - activation functions
+  - learnable activations
+  - vision transformers
+  - transfer learning
+preferred-citation:
+  type: article
+  title: "Towards Transferable Activation Functions"
+  authors:
+    - family-names: "A"
+      given-names: "Arun Prakash"
+    - family-names: "Khapra"
+      given-names: "Mitesh M."
+  journal: "arXiv preprint"
+  year: 2026
+  # replace with the real identifier once the paper is posted
+  url: "https://arxiv.org/abs/XXXX.XXXXX"

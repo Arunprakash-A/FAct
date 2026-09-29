@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fact-activation"
+version = "1.0.0"
+description = "FAct: one globally shared learnable nonlinearity, learned in one network and transferred to another"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Arun Prakash A" }, { name = "Mitesh M. Khapra" }]
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0", "numpy>=1.24,<2", "scipy>=1.10"]
+
+[project.urls]
+Repository = "https://github.com/Arunprakash-A/FAct"
+
+[tool.setuptools]
+packages = ["fact"]
+
+[tool.setuptools.package-data]
+fact = ["coefficients/*.json"]

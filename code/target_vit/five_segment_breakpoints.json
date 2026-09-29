@@ -1,0 +1,181 @@
+{
+  "description": "5-segment piecewise-linear approximation of the learned fact_k2_global activation (imagenet1k_100ep, seed1, final checkpoint, test_acc=0.6512), restricted to the p99.99 pre-activation range -- the 3-segment fit extended with one more true extremum on each side.",
+  "coeffs": {
+    "a0": 0.21817652881145477,
+    "a": [
+      0.11933743208646774,
+      -0.42374375462532043
+    ],
+    "b": [
+      0.8315256237983704,
+      -0.5918471813201904
+    ],
+    "k": [
+      1.0,
+      2.0
+    ],
+    "w": 1.0
+  },
+  "seed1_test_acc": 0.6512,
+  "range_pm": 3.2115682102908254,
+  "range_source": "p99.99_abs (99.99th pctile of |FFN pre-activation|), interpolated from the same preact.json histogram p99_abs/p999_abs were computed from.",
+  "critical_points": {
+    "local_min_outer_left": {
+      "t": -2.464488290454123,
+      "phi": -1.0648982879995161
+    },
+    "local_max_inner_left": {
+      "t": -0.8741904547071275,
+      "phi": 0.31433999826062736
+    },
+    "local_min_inner_right": {
+      "t": 0.18580343428610935,
+      "phi": -0.12065579072220006
+    },
+    "local_max_outer_right": {
+      "t": 1.9101499691944464,
+      "phi": 1.663945400776396
+    }
+  },
+  "extrema_based": {
+    "t": [
+      -3.2115682102908254,
+      -2.464488290454123,
+      -0.8741904547071275,
+      0.18580343428610935,
+      1.9101499691944464,
+      3.2115682102908254
+    ],
+    "phi": [
+      -0.17977104127806043,
+      -1.0648982879995161,
+      0.31433999826062736,
+      -0.12065579072220006,
+      1.663945400776396,
+      -0.46116812719340716
+    ],
+    "segments": [
+      {
+        "t_range": [
+          -3.2115682102908254,
+          -2.464488290454123
+        ],
+        "slope": -1.1847825422947094,
+        "intercept": -3.984780990219294,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          -2.464488290454123,
+          -0.8741904547071275
+        ],
+        "slope": 0.8672830052694418,
+        "intercept": 1.0725105229968848,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          -0.8741904547071275,
+          0.18580343428610935
+        ],
+        "slope": -0.41037575169039764,
+        "intercept": -0.044406566710380624,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          0.18580343428610935,
+          1.9101499691944464
+        ],
+        "slope": 1.0349434730029266,
+        "intercept": -0.3129518422981371,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          1.9101499691944464,
+          3.2115682102908254
+        ],
+        "slope": -1.6329212707050291,
+        "intercept": 4.783069915710564,
+        "direction": "down"
+      }
+    ],
+    "weighted_rmse_in_range": 0.09741204641787843,
+    "max_abs_error_in_range": 0.3802979409339844
+  },
+  "optimized": {
+    "t": [
+      -3.2115682102908254,
+      -2.603186509398306,
+      -0.9840829583727969,
+      0.26741081568760683,
+      2.1894667228836817,
+      3.2115682102908254
+    ],
+    "phi": [
+      -0.17977104127806043,
+      -1.0326629687035087,
+      0.30149783656904394,
+      -0.11323833574265785,
+      1.524311147522553,
+      -0.46116812719340716
+    ],
+    "segments": [
+      {
+        "t_range": [
+          -3.2115682102908254,
+          -2.603186509398306
+        ],
+        "slope": -1.401902664354012,
+        "intercept": -4.682077072039415,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          -2.603186509398306,
+          -0.9840829583727969
+        ],
+        "slope": 0.8240120308719728,
+        "intercept": 1.1123940336443114,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          -0.9840829583727969,
+          0.26741081568760683
+        ],
+        "slope": -0.3313929169348664,
+        "intercept": -0.0246202855120099,
+        "direction": "down"
+      },
+      {
+        "t_range": [
+          0.26741081568760683,
+          2.1894667228836817
+        ],
+        "slope": 0.8519780705307857,
+        "intercept": -0.34106648653124866,
+        "direction": "up"
+      },
+      {
+        "t_range": [
+          2.1894667228836817,
+          3.2115682102908254
+        ],
+        "slope": -1.9425461161911652,
+        "intercept": 5.777451226590047,
+        "direction": "down"
+      }
+    ],
+    "weighted_rmse_in_range": 0.05998452908079419,
+    "max_abs_error_in_range": 0.4847560764811256,
+    "knot_shift_from_extrema": [
+      -0.138698218944183,
+      -0.10989250366566938,
+      0.08160738140149748,
+      0.27931675368923536
+    ]
+  },
+  "recommendation": "optimized -- same rationale as the 3-segment fit: the true extrema are a good starting guess but not the error-minimizing knots. Weighted RMSE drops from 0.0974 to 0.0600 (38% lower), max abs error from 0.3803 to 0.4848."
+}
